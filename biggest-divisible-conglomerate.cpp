@@ -45,6 +45,19 @@ vector<int> biggest_divisible_conglomerate(vector<int> input) {
     if (input.empty()) return {};
 
     reverse(input.begin(), input.end());
+    vector<int> bestConglomerate;
+    
+   
+    vector<int> candidate = find_conglomerate(input, {}, 0);
+    
+    if (candidate.size() > 1) {
+        return candidate; 
+    }
 
-    return find_conglomerate(input, {}, 0);
+//  int largest = *max_element(input.begin(), input.end());
+    int smallest = *min_element(input.begin(), input.end());
+
+    return {smallest}; // or return {largest} (both are correct per the instructions)
+
+    
 }
