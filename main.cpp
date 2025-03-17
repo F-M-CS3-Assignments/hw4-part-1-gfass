@@ -33,5 +33,35 @@ int main() {
 
 	// write your own tests here!
 
+	// Test 3 (empty set)
+	values = {};
+	ans = biggest_divisible_conglomerate(values);
+	cout << "input: " << vec_to_string(values) << endl;
+	cout << "output: " << vec_to_string(ans) << endl << endl;
+	soln = {};
+	set<int> answerSet3(ans.begin(), ans.end());
+	assert(answerSet3 == soln);
+
+	// Test 4 (only one number)
+	values = {4};
+	ans = biggest_divisible_conglomerate(values);
+	cout << "input: " << vec_to_string(values) << endl;
+	cout << "output: " << vec_to_string(ans) << endl << endl;
+	soln = {4};
+	set<int> answerSet4(ans.begin(), ans.end());
+	assert(answerSet4 == soln);
+
+	// Test 5 (no pairs that satisfy the divisibility requirement)
+	values = {7, 11, 17, 3};
+	ans = biggest_divisible_conglomerate(values);
+	cout << "input: " << vec_to_string(values) << endl;
+	cout << "output: " << vec_to_string(ans) << endl << endl;
+	soln = {17};
+	soln = {3};
+	set<int> answerSet5(ans.begin(), ans.end());
+	assert(answerSet5 == soln);
+
+
+
 	return 0;
 }
